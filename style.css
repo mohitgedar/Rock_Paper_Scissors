@@ -1,0 +1,57 @@
+
+body{
+    font-family: arial;
+    background-color: rgb(28, 28, 28);
+    color: white;
+}
+#rock-button-img{
+    background-color:rgb(28, 28, 28);
+    width: 60px;
+    
+}
+#paper-button-img{
+    background-color:rgb(28, 28, 28);
+    width: 60px;
+    padding-left: 5px;
+}
+#scissors-button-img{
+    background-color:rgb(28, 28, 28);
+    width: 60px; 
+}
+#rock-button ,#paper-button,#scissors-button{
+    margin-left: 10px;
+    background-color: rgb(28, 28, 28);
+    border: solid;
+    border-color: white;
+    border-radius: 60px;
+    width: 110px;
+    height: 110px;
+}
+#heading-para{
+    font-size: 29px;
+    font-weight: 600;
+}
+#whatresult{
+   
+    font-size: 28px;
+    font-weight: 600;
+}
+#result-para{
+    margin-top: 50px;
+}
+#reset-button{
+    width: 130px;
+    height: 36px;
+    font-size: 15px;
+}
+#result-full{
+    display: none;
+}
+#your-img{
+    width: 30px;
+    background-color: rgb(28, 28, 28);
+}
+#pc-img{
+    width: 30px;
+    background-color: rgb(28, 28, 28);
+}
