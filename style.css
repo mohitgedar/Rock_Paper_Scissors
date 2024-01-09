@@ -28,6 +28,7 @@ body{
     cursor: pointer;
 }
 #heading-para{
+    margin-top: 10px;
     color: aqua;
     font-size: 50px;
     font-weight: 900;
@@ -35,7 +36,7 @@ body{
 #whatresult{
    font-size: xx-large;
    font-weight: 600;
-   margin-top: 8%;
+   
    
 }
 #result-para{
