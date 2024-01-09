@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <p id="heading-para">Rock Paper Scissors</p>
+    <div id="main-buttons">
+        <button id="rock-button" onclick="playGame('Rock')">
+             <img id="rock-button-img" src="images/rock-emoji.png" alt="rock">
+        </button>
+
+        <button id="paper-button"
+            onclick="playGame('Paper')"
+        >
+            <img id="paper-button-img" src="images/paper-emoji.png" alt="paper">
+        </button>
+        
+        <button id="scissors-button"
+            onclick="playGame('Scissors')"
+        ><img  id="scissors-button-img" src="images/scissors-emoji.png" alt="scissors"></button>
+        
+       
+        
+    </div>
+
+    <div id="result-full">
+        
+        <p id="compare-result">You : <img id="your-img" > 
+        Pc : <img id="pc-img" ></p>
+
+        <p id="whatresult">result. </p>
+    </div>
+
+    <div >
+        <p id="result-para">
+            Lose: <span id="lose">0</span> ,
+             Win : <span id="win">0</span> ,
+              Tie : <span id="tie">0</span>
+        </p>
+    </div>
+    
+
+    <button id="reset-button" onclick="ResetTheScore()">Reset Score</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
