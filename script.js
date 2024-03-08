@@ -1,24 +1,30 @@
 let Choice = ['Rock', 'Paper', 'Scissors'];
 
+                    
+            setTimeout(() => {
+                document.querySelectorAll('#howto').forEach(element => {
+                    element.style.opacity = '0';
+                    element.style.height = '0px';
+                    element.style.margin = '0px';
+                });
+            }, 5000);
         
-        setTimeout(() => {
-            document.getElementById('howto').style.opacity='0';
-            document.getElementById('howto').style.fontSize='0px';       
-        }, 5000);
-        setTimeout(() => {
-            document.getElementById('howto').style.height='0';            
-            document.getElementById('howto').style.margin='0';
-            
-        }, 6000);
+
+        
         
         document.body.addEventListener('keyup',(event)=>{
+            
             if(event.key==='r'||event.key==='R')
                 playGame('Rock');
             else if(event.key==='p'||event.key==='P')
                 playGame('Paper');
             else if(event.key==='s'|| event.key==='S')
                 playGame('Scissors');
-        
+            else if(event.key===' ')
+                autoplay();
+            else if(event.key==='Backspace')
+                ResetTheScore();
+            
         })
         
         

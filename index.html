@@ -8,7 +8,17 @@
 </head>
 <body>
     <p id="heading-para">Rock Paper Scissors</p>
-    <div id="howto">" You can also play using keyboard : "</div>
+    <div id="howto">
+        " You can also play using keyboard : "
+        <div id="keyboard-shortcuts">
+            
+            <div class="keyboard-shortcuts-span"><span class="middot-css">&middot;</span> R='rock'</div>
+            <div class="keyboard-shortcuts-span"><span class="middot-css">&middot;</span> p='paper'</div>
+            <div class="keyboard-shortcuts-span"><span class="middot-css">&middot;</span> S='scissors'</div>
+            <div class="keyboard-shortcuts-span"><span class="middot-css">&middot;</span> BackSpace ='ResetScore'</div>
+            <div class="keyboard-shortcuts-span"> <span class="middot-css">&middot;</span> Space ='autoPlay & stopPlay'</div>
+        </div>
+    </div>
     <div id="main-buttons">
         <button id="rock-button" onclick="playGame('Rock')">
              <img id="rock-button-img" src="images/rock-emoji.png" alt="rock">

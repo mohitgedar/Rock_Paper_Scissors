@@ -3,13 +3,12 @@ body{
     font-family: arial;
     background-color: rgb(29, 29, 29);
     color:white;
-    margin-bottom: 500px;
+   
     margin-left: 20px;
 }
 #main-buttons{
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: space-around;    
 }
 
 #main-buttons{
@@ -83,12 +82,39 @@ body{
 }
 #howto{
     display: block;
+    height: 200px;
     font-size: xx-large;
     margin-bottom: 50px;
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
     color: rgb(255, 255, 255);
     opacity: 1;
-    transition: opacity 2s ease ,height 2s ease , margin 2s ease ,font-size 2s ease;
+    transition: opacity 2s ease , height 5s ease , margin 5s ease ;
     
 }
+
+#keyboard-shortcuts{
+    
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: large;
+    color: rgb(49, 249, 34);
+   
+   
+}
+.keyboard-shortcuts-span{
+    
+    margin-top: 3px;
+    margin-bottom: 5px;
+  
+    
+}
+
+.middot-css{
+    font-size: 24px;
+    font-weight: 900;
+   
+}
+
+
+
