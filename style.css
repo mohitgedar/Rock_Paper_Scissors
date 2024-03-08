@@ -1,13 +1,19 @@
 body{
             
     font-family: arial;
-    background-color: rgb(28, 28, 28);
+    background-color: rgb(29, 29, 29);
     color:white;
+    margin-bottom: 500px;
+    margin-left: 20px;
 }
 #main-buttons{
     display: flex;
     justify-content: space-around;
     
+}
+
+#main-buttons{
+    max-width: 60%;
 }
 #rock-button-img,#paper-button-img, #scissors-button-img{
     background-color:rgb(28, 28, 28);
@@ -22,15 +28,15 @@ body{
     background-color: rgb(28, 28, 28);
     /* {border: 1px solid white;} == { border-width:1px ; border: solid; border-color:white; } */
     border: solid;
-    border-color: rgb(191, 232, 10);
+    border-color: rgb(212, 176, 189);
     border-radius: 60px;
     
     cursor: pointer;
 }
 #heading-para{
     margin-top: 10px;
-    color: aqua;
-    font-size: 50px;
+    color: rgb(31, 233, 16);
+    font-size: 40px;
     font-weight: 900;
 }
 #whatresult{
@@ -42,12 +48,12 @@ body{
 #result-para{
    font-size: 30px;
    font-weight: 700;
-   color: rgb(250, 242, 0);
+   color: rgb(255, 255, 255);
 }
 
 
 #result-full{
-   color: rgb(155, 242, 24);
+   color: rgb(255, 255, 255);
    display: none;
    font-size: x-large;
    margin-top: 50px;
@@ -55,21 +61,34 @@ body{
    margin-bottom:50px ;
 }
 #your-img{
-    width: 19%;
+    width: 13%;
     max-width: 120px;
     background-color: rgb(28, 28, 28);
 }
 #pc-img{
     max-width: 120px;
 
-    width: 19%;
+    width: 13%;
     background-color: rgb(28, 28, 28);
 }
-#reset-button{
+#reset-button,#autoPlay-button{
     font-size: 20px;
     font-weight: 600;
-   width: 30%;
-   padding: 2% ;
-   background-color: rgb(1, 251, 197);
-   border: none;
+    padding:0.9%;
+    margin-left: 15px;
+    border-radius: 8px;
+    background-color: rgb(18, 165, 47);
+    border: solid;
+    border-color: rgb(151, 151, 206);
+}
+#howto{
+    display: block;
+    font-size: xx-large;
+    margin-bottom: 50px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    transition: opacity 2s ease ,height 2s ease , margin 2s ease ,font-size 2s ease;
+    
 }

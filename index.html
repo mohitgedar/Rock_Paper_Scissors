@@ -8,6 +8,7 @@
 </head>
 <body>
     <p id="heading-para">Rock Paper Scissors</p>
+    <div id="howto">" You can also play using keyboard : "</div>
     <div id="main-buttons">
         <button id="rock-button" onclick="playGame('Rock')">
              <img id="rock-button-img" src="images/rock-emoji.png" alt="rock">
@@ -23,7 +24,7 @@
             onclick="playGame('Scissors')"
         ><img  id="scissors-button-img" src="images/scissors-emoji.png" alt="scissors"></button>
         
-       
+        
         
     </div>
 
@@ -44,7 +45,8 @@
     </div>
     
 
-    <button id="reset-button" onclick="ResetTheScore()">Reset Score</button>
+    <button id="reset-button" onclick="ResetTheScore()">ResetScore</button>
+    <button id="autoPlay-button" onclick="autoplay()">AutoPlay</button>
 
     <script src="script.js"></script>
 </body>

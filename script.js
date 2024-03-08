@@ -1,5 +1,25 @@
 let Choice = ['Rock', 'Paper', 'Scissors'];
+
         
+        setTimeout(() => {
+            document.getElementById('howto').style.opacity='0';
+            document.getElementById('howto').style.fontSize='0px';       
+        }, 5000);
+        setTimeout(() => {
+            document.getElementById('howto').style.height='0';            
+            document.getElementById('howto').style.margin='0';
+            
+        }, 6000);
+        
+        document.body.addEventListener('keyup',(event)=>{
+            if(event.key==='r'||event.key==='R')
+                playGame('Rock');
+            else if(event.key==='p'||event.key==='P')
+                playGame('Paper');
+            else if(event.key==='s'|| event.key==='S')
+                playGame('Scissors');
+        
+        })
         
         
         function ResetTheScore(){
@@ -11,6 +31,28 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
             localStorage.setItem('Tie',0);
             updateScore();
         }
+        
+        let intervalid;//required to stop the setInterval
+        function autoplay(){
+            
+            let a=document.getElementById('autoPlay-button').innerText; //used the innertext of the button to use the same button to both start and stop auto play
+            if(a==="AutoPlay")
+            {
+                 
+                 intervalid=setInterval(function()
+                                        {
+                                            let v=pcChoice1();
+                                            playGame(v);
+                                         }, 1000);//this starts the interval where every second we choose a value randomly and pass it as user choice to the platgame function to play
+                 document.getElementById('autoPlay-button').innerText='StopPlay'; //once we start auto play we want to autoplay button to change so that we can use to also stop the autoplay
+            }
+            else
+            {
+                clearInterval(intervalid); //this is the way to stop setinterval using the intervalid of the setinterval
+                document.getElementById('autoPlay-button').innerText='AutoPlay';
+            }
+        }
+
 
         function updateScore() {
             if(localStorage.getItem('Tie')===null){
@@ -22,10 +64,16 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
             document.getElementById('tie').innerHTML = localStorage.getItem('Tie');
             document.getElementById('win').innerHTML = localStorage.getItem('Win');
         }
+        function pcChoice1()
+        {
+            let a =(Math.floor(Math.random() * Choice.length)); //this selects a random index from 0,1,2
+            a=Choice[a]; //this stores the value in array choice[index from above ] in a
+            return a; //here we return the chosen value  as string 
+        }
 
         function playGame(userChoice) {
-            let pcChoice = Math.floor(Math.random() * Choice.length);
-            let pcChose = Choice[pcChoice];
+        
+            let pcChose=pcChoice1(); //this is to get computers choice
 
             document.getElementById('result-full').style.display='block';
 
@@ -113,8 +161,9 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
         /*this function below is called whenever window resize , so that we can adjust css accordingly , without having to do it manaully in css file*/
         function handleResize(){
             let element=document.getElementById('rock-button');
-            element=getComputedStyle(element).width;//here by using getComputerStyle(elementreference ) we got the css value for defined property .
+            element=getComputedStyle(element).width;//here by using getComputedStyle(elementreference ) we got the css value for defined property .
             document.getElementById('rock-button').style.height=element;
+            document.getElementById('paper-button').style.height=element;document.getElementById('scissors-button').style.height=element;
             document.getElementById('rock-button').style.borderRadius=element;
             document.getElementById('paper-button').style.borderRadius=element;
             document.getElementById('scissors-button').style.borderRadius=element;
