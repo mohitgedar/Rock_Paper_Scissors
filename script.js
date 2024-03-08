@@ -7,7 +7,7 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
                     element.style.height = '0px';
                     element.style.margin = '0px';
                 });
-            }, 5000);
+            }, 15000);
         
 
         
