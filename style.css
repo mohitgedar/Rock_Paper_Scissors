@@ -9,35 +9,43 @@ body{
 #main-buttons{
     display: flex;
     justify-content: space-around;    
+    min-width: 390px;
 }
 
-#main-buttons{
-    max-width: 60%;
-}
 #rock-button-img,#paper-button-img, #scissors-button-img{
     background-color:rgb(28, 28, 28);
     width: 50%;
+    cursor: pointer;
                 
 }
 
 #rock-button ,#paper-button,#scissors-button{
     width: 27%;
     max-width: 200px;
-             
+    box-shadow: -4px -2px 10px 4px rgb(26, 240, 30);         
     background-color: rgb(28, 28, 28);
     /* {border: 1px solid white;} == { border-width:1px ; border: solid; border-color:white; } */
     border: solid;
-    border-color: rgb(212, 176, 189);
+    border-color: rgb(15, 176, 221);
     border-radius: 60px;
-    
     cursor: pointer;
+    
+}
+#rock-button:focus{
+    outline: none;
 }
 #heading-para{
     margin-top: 10px;
+    margin-bottom: 65px;
     color: rgb(31, 233, 16);
     font-size: 40px;
     font-weight: 900;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    
 }
+
 #whatresult{
    font-size: xx-large;
    font-weight: 600;
@@ -45,13 +53,19 @@ body{
    
 }
 #result-para{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
    font-size: 30px;
    font-weight: 700;
-   color: rgb(255, 255, 255);
+   color: rgb(84, 192, 250);
 }
 
 
 #result-full{
+   display: flex;
+   justify-content: center;
+   align-items: center;
    color: rgb(255, 255, 255);
    display: none;
    font-size: x-large;
@@ -84,7 +98,7 @@ body{
     display: block;
     height: 200px;
     font-size: xx-large;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
     color: rgb(255, 255, 255);
@@ -114,6 +128,12 @@ body{
     font-size: 24px;
     font-weight: 900;
    
+}
+
+#final-buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 

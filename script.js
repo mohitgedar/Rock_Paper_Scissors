@@ -2,12 +2,14 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
 
                     
             setTimeout(() => {
-                document.querySelectorAll('#howto').forEach(element => {
-                    element.style.opacity = '0';
-                    element.style.height = '0px';
-                    element.style.margin = '0px';
-                });
-            }, 15000);
+                let x=document.getElementById('howto');
+                x.style.opacity='0';
+                x.style.height='0px';
+                x.style.margin='0px';
+                setTimeout(() => {
+                    x.innerHTML='';
+                }, 1500);
+            }, 10000);
         
 
         
@@ -23,8 +25,11 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
             else if(event.key===' ')
                 autoplay();
             else if(event.key==='Backspace')
-                ResetTheScore();
-            
+                {
+                    ResetTheScore();
+                    if(document.getElementById('autoPlay-button').innerText !=="AutoPlay")
+                    autoplay();
+                }
         })
         
         
@@ -49,7 +54,7 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
                                         {
                                             let v=pcChoice1();
                                             playGame(v);
-                                         }, 1000);//this starts the interval where every second we choose a value randomly and pass it as user choice to the platgame function to play
+                                         }, 1400);//this starts the interval where every second we choose a value randomly and pass it as user choice to the platgame function to play
                  document.getElementById('autoPlay-button').innerText='StopPlay'; //once we start auto play we want to autoplay button to change so that we can use to also stop the autoplay
             }
             else
@@ -82,11 +87,11 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
             let pcChose=pcChoice1(); //this is to get computers choice
 
             document.getElementById('result-full').style.display='block';
-
+            let a=document.getElementById('whatresult');
             if (userChoice === 'Rock') {
                 document.getElementById('your-img').src='images/rock-emoji.png';
                 document.getElementById('your-img').alt='rock';
-
+                
 
                 if (pcChose === 'Rock') {
                     document.getElementById('pc-img').src='images/rock-emoji.png';
@@ -96,18 +101,22 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
                     // above line would have been required if updateScore was not called at very start because
                     // localStorage.getItem('Tie') will give null and parseInting it gives NaN and any math operation with NaN is NaN , so incrementing would not have worked , 
                     localStorage.setItem(    'Tie' , ((parseInt)(localStorage.getItem('Tie'))+1) );
-                    document.getElementById('whatresult').innerHTML='Tie.';
+                    
+                    a.innerHTML='Tie.';
+                    a.style.color='Yellow';
                    
                 } else if (pcChose === 'Paper') {
                     document.getElementById('pc-img').src='images/paper-emoji.png';
                     document.getElementById('pc-img').alt='paper';
                     localStorage.setItem('Lose',((parseInt)(localStorage.getItem('Lose'))+1));
-                    document.getElementById('whatresult').innerHTML=' You Lose.';
+                    a.innerHTML=' You Lose.';
+                    a.style.color='red';
                 } else {
                     document.getElementById('pc-img').src='images/scissors-emoji.png';
                     document.getElementById('pc-img').alt='scissors';
                     localStorage.setItem('Win',((parseInt)(localStorage.getItem('Win'))+1));
-                    document.getElementById('whatresult').innerHTML='You Win.';
+                    a.innerHTML='You Win.';
+                    a.style.color='green';
                 }
             } else if (userChoice === 'Paper') {
 
@@ -118,17 +127,20 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
                     document.getElementById('pc-img').src='images/rock-emoji.png';
                     document.getElementById('pc-img').alt='rock';
                     localStorage.setItem('Win',((parseInt)(localStorage.getItem('Win'))+1));
-                    document.getElementById('whatresult').innerHTML='You Win.';
+                    a.innerHTML='You Win.';
+                    a.style.color='green';
                 } else if (pcChose === 'Paper') {
                     document.getElementById('pc-img').src='images/paper-emoji.png';
                     document.getElementById('pc-img').alt='paper';
                     localStorage.setItem('Tie',((parseInt)(localStorage.getItem('Tie'))+1));
-                    document.getElementById('whatresult').innerHTML='Tie.';
+                    a.innerHTML='Tie.';
+                    a.style.color='Yellow';
                 } else {
                     document.getElementById('pc-img').src='images/scissors-emoji.png';
                     document.getElementById('pc-img').alt='scissors';
                     localStorage.setItem('Lose',((parseInt)(localStorage.getItem('Lose'))+1));
-                    document.getElementById('whatresult').innerHTML='You Lose.';
+                    a.innerHTML='You Lose.';
+                    a.style.color='red';
                 }
             } else if (userChoice === 'Scissors') {
 
@@ -139,17 +151,20 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
                     document.getElementById('pc-img').src='images/rock-emoji.png';
                     document.getElementById('pc-img').alt='rock';
                     localStorage.setItem('Lose',((parseInt)(localStorage.getItem('Lose'))+1));
-                    document.getElementById('whatresult').innerHTML='You Lose.';
+                    a.innerHTML='You Lose.';
+                    a.style.color='red';
                 } else if (pcChose === 'Paper') {
                     document.getElementById('pc-img').src='images/paper-emoji.png';
                     document.getElementById('pc-img').alt='paper';
                     localStorage.setItem('Win',((parseInt)(localStorage.getItem('Win'))+1));
-                    document.getElementById('whatresult').innerHTML='You Win.';
+                   a.innerHTML='You Win.';
+                   a.style.color='green';
                 } else {
                     document.getElementById('pc-img').src='images/scissors-emoji.png';
                     document.getElementById('pc-img').alt='scissors';
                     localStorage.setItem('Tie',((parseInt)(localStorage.getItem('Tie'))+1));
-                    document.getElementById('whatresult').innerHTML='Tie.';
+                    a.innerHTML='Tie.';
+                    a.style.color='yellow';
                 }
             }
 
@@ -169,7 +184,8 @@ let Choice = ['Rock', 'Paper', 'Scissors'];
             let element=document.getElementById('rock-button');
             element=getComputedStyle(element).width;//here by using getComputedStyle(elementreference ) we got the css value for defined property .
             document.getElementById('rock-button').style.height=element;
-            document.getElementById('paper-button').style.height=element;document.getElementById('scissors-button').style.height=element;
+            document.getElementById('paper-button').style.height=element;
+            document.getElementById('scissors-button').style.height=element;
             document.getElementById('rock-button').style.borderRadius=element;
             document.getElementById('paper-button').style.borderRadius=element;
             document.getElementById('scissors-button').style.borderRadius=element;
